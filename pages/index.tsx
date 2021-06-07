@@ -29,7 +29,7 @@ export default function Home({
           </p>
         </div>
       </section>
-      <section className="py-20">
+      <section id="apps" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-center text-3xl font-semibold mb-8">Our Apps</h2>
           <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

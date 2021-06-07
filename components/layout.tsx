@@ -38,13 +38,20 @@ export default function Layout({
               </>
             )}
             <nav>
-              <ul className="flex space-x-3">
-                <li>
-                  <a href="/#apps">Apps</a>
-                </li>
-                <li>
-                  <a href="/#contact">Contact</a>
-                </li>
+              <ul className="flex space-x-6 text-gray-200">
+                {[
+                  ["Apps", "#apps"],
+                  ["Contact", "#contact"],
+                ].map(([title, url]) => (
+                  <li>
+                    <a
+                      className="text-base font-medium transition-colors duration-200 hover:text-white"
+                      href={url}
+                    >
+                      {title}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -60,13 +67,13 @@ export default function Layout({
           </div>
         </div>
       )}
-      <footer className="bg-gray-50 py-16 text-center">
+      <footer id="contact" className="bg-gray-50 py-16 text-center">
         <div className="container mx-auto px-4">
-          <p>
+          <p className="text-xl mb-3">
             <a href="mailto:info@companjenapps.com">info@companjenapps.com</a>
           </p>
-          <p>
-            <small>© 2021 Companjen Apps B.V.</small>
+          <p className="text-gray-500">
+            <small>© {new Date().getFullYear()} Companjen Apps B.V.</small>
           </p>
         </div>
       </footer>
