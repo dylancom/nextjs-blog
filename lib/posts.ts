@@ -31,16 +31,22 @@ export async function getSortedPostsData() {
       return {
         id,
         contentHtml,
-        ...(matterResult.data as { date: string; title: string }),
+        ...(matterResult.data as {
+          date: string;
+          image: string;
+          appStoreUrl?: string;
+          playStoreUrl?: string;
+          title: string;
+        }),
       };
     })
   );
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
-      return 1;
-    } else {
       return -1;
+    } else {
+      return 1;
     }
   });
 }
