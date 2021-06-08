@@ -22,12 +22,19 @@ export default function Home({
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className="bg-gray-500 py-32">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gray-500 py-32">
+        <div className="relative z-10 container mx-auto px-4">
           <p className="text-white text-center text-4xl font-bold">
             App publisher of entertainment and utility apps.
           </p>
         </div>
+        <Image
+          className=""
+          src="/images/ferdinand-stohr-NFs6dRTBgaM-unsplash.jpg"
+          alt=""
+          layout="fill"
+          objectFit="cover"
+        />
       </section>
       <section id="apps" className="py-20">
         <div className="container mx-auto px-4">
