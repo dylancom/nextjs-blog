@@ -2,7 +2,6 @@ import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Head from "next/head";
 import Date from "../../components/date";
-import utilStyles from "../../styles/utils.module.css";
 import { GetStaticProps, GetStaticPaths } from "next";
 
 export default function Post({
@@ -19,13 +18,15 @@ export default function Post({
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
-          <Date dateString={postData.date} />
-        </div>
-        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-      </article>
+      <div className="container mx-auto px-4">
+        <article>
+          <h1 className="text-3xl font-bold">{postData.title}</h1>
+          <div className="text-gray-500">
+            <Date dateString={postData.date} />
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </article>
+      </div>
     </Layout>
   );
 }
